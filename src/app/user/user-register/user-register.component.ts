@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { User } from 'src/app/model/user';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-user-register',
@@ -9,7 +11,9 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 export class UserRegisterComponent implements OnInit {
 
   registerationForm: FormGroup;
-  constructor(private fb :FormBuilder) { }
+  user: User;
+  userSubmitted : boolean;
+  constructor(private fb :FormBuilder,private userService:UserService) { }
 
   ngOnInit() {
     // this.registerationForm = new FormGroup({
@@ -37,6 +41,26 @@ export class UserRegisterComponent implements OnInit {
     {notmatched: true};
   }
 
+  onSubmit() {
+    //console.log(this.registerationForm);
+    this.userSubmitted=true;
+    if(this.registerationForm.valid){
+    //this.user=Object.assign(this.user,this.registerationForm.value);
+    this.userService.addUser(this.userData());
+    this.registerationForm.reset();
+    this.userSubmitted=false;
+    }
+  }
+
+  userData():User{
+    return this.user={
+      userName:this.userName.value,
+      email : this.email.value,
+      password : this.password.value,
+      mobile : this.mobile.value
+    }
+  }
+
   // ------------------------------------
   // Getter methods for all form controls
   // ------------------------------------
@@ -58,8 +82,8 @@ export class UserRegisterComponent implements OnInit {
   }
   // ------------------------
 
-  onSubmit() {
-    console.log(this.registerationForm);
-  }
+
+
+
 
 }
