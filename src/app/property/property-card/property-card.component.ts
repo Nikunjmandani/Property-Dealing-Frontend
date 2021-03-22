@@ -10,6 +10,7 @@ import { IProperty } from "../IProperty.interface";
  // styles: ['h1{font-weight: normal;}'],
 })
 export class PropertyCardComponent{
-@Input() property:IProperty
+@Input() property:IProperty;
+@Input() hideIcons: boolean;
 
 }
