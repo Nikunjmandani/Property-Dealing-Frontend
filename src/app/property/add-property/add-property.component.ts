@@ -13,7 +13,18 @@ export class AddPropertyComponent implements OnInit {
 
 @ViewChild('Form') addpropertyForm: NgForm;
 @ViewChild('formTabs') formTabs : TabsetComponent;
-SellRent = '1';
+
+// Will come from masters
+propertyTypes: Array<string> = ['House', 'Apartment', 'Duplex']
+furnishTypes: Array<string> = ['Fully', 'Semi', 'Unfurnished']
+
+propertyView: IProperty = {
+  Id: null,
+  Name: '',
+  Price: null,
+  SellRent: null,
+  Type: null
+};
   constructor(private router:Router) { }
 
   ngOnInit() {
