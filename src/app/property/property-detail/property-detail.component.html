@@ -1,5 +1,6 @@
 <div class="row shadow">
   <div class="col-sm-4 p-0">
+    <div class="card">
     <div class="card-img-wrapper">
       <img *ngIf="property.Image" class="card-img-top" src="assets/images/{{property.Image}}.png">
         <img *ngIf="!property.Image" class="card-img-top" src="assets/images/house_default.png">
@@ -30,6 +31,7 @@
       <button class="btn btn-primary">Like</button>
       <button class="btn btn-success">Message</button>
       </div>
+    </div>
     </div>
   </div>
   <div class="col-sm-8 p-0">
@@ -98,7 +100,7 @@
             </div>
         </div>
         </tab>
-        <tab heading="Photo">
+        <tab heading="Photos">
           <ngx-gallery [options]="galleryOptions" [images]="galleryImages" class="ngx-gallery"></ngx-gallery>
         </tab>
         <tab heading="Contact">
