@@ -22,7 +22,7 @@ galleryImages: NgxGalleryImage[];
               private housingService: HousingService) { }
 
   ngOnInit() {
-    this.propertyId=+this.route.snapshot.params['id'];// returns always a string so use number
+    this.propertyId = +this.route.snapshot.params['id'];// returns always a string so use number
     this.route.data.subscribe(
       (data: Property) => {
         this.property = data['prp'];

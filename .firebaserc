@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "propertydealing-ng11": {
+      "hosting": {
+        "property-dealing-app": [
+          "propertydealing-ng11"
+        ]
+      }
+    }
+  }
+}
