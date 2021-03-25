@@ -14,7 +14,7 @@ export class HousingService {
 constructor(private http:HttpClient) { }
 
 getallCities():Observable<string[]>{
-  return this.http.get<string[]>('http://localhost:61793/api/city');
+  return this.http.get<string[]>('http://localhost:5000/api/city');
 }
 
 getProperty(id :number){

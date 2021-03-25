@@ -23,7 +23,7 @@ property = new Property();
 // Will come from masters
 propertyTypes: Array<string> = ['House', 'Apartment', 'Duplex']
 furnishTypes: Array<string> = ['Fully', 'Semi', 'Unfurnished']
-cityList : string[];
+cityList : any[];
 
 propertyView: IPropertyBase = {
   Id: null,
